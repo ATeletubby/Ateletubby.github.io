@@ -1,0 +1,26 @@
+<script>
+   let toggleMusicPanel = function(){
+     const ele = document.getElementById('music-control');
+     const musicFrame =  document.getElementById('')
+     const status = ele.getAttribute('class');
+     if (status != 'open'){
+      ele.setAttribute('class','open')
+     } else {
+      ele.setAttribute('class','')
+     }
+   }
+
+</script> 
+
+<% if(theme.footer.music.enable) { %>
+  <!-- 音乐 -->
+  <div class="music-panel">
+    <a id="music-control" onclick="toggleMusicPanel()">
+      <i class="iconfont icon-music"></i>
+    </a>
+    <div class="music-content">
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="<%- theme.footer.music.url %>"></iframe>
+    </div>
+  </div>  
+
+<% } %>
